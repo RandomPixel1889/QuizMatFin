@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #87CEEB; 
+    font-family: "IBM Plex Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
+    position: relative; 
+  }
+
+  .white-box {
+    position: absolute;
+    top: 100px; 
+    width: 100%; 
+    max-width: 800px; 
+    background-color: white; 
+    height: calc(100vh - 100px); /* 100vh = 100% de la ventana/pantalla... como tiene un top de 100px, la altura total queda en 100vh+100px, por lo tanto, debemos restarle los px de top para que no se desborde */
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+
+  
