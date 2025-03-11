@@ -30,6 +30,13 @@ html {
   border: 0px solid #000000;
 }
 
+/* Aplicar margen inferior solo en dispositivos móviles */
+@media (hover: none) and (pointer: coarse) {
+  .contenedor {
+    margin-bottom: 1px; /* Forzar un pequeño desbordamiento */
+  }
+}
+
 
 /* Header - Flexbox para alinear elementos */
 .header {
