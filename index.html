@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Página Quiz</title>
-  
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario Adaptable</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <div class="contenedor">
+        <!-- Header -->
+        <header class="header">
+            <span>Home</span>
+            <span>Compartir</span>
+        </header>
 
+        <!-- Logo -->
+        <img src="logo.png" class="logo" alt="Logo">
 
+        <!-- Pregunta -->
+        <div class="pregunta">
+            ¿Cuál es la capital de Francia? (Texto tan largo como necesites...
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
 
-<div class="white-box"></div>
+        <!-- Opciones -->
+        <div class="opciones">
+            <div class="opcion">Opción 1</div>
+            <div class="opcion">Opción 2</div>
+            <div class="opcion">Opción 3</div>
+        </div>
 
+        <!-- Feedback -->
+        <div class="feedback" id="feedback">
+            ¡Correcto! París es la respuesta.
+        </div>
+
+        <!-- Botón Siguiente -->
+        <div class="boton-contenedor">
+            <button id="siguiente-btn">Siguiente Pregunta</button>
+        </div>
+    </div>
+
+    <script>
+        // Lógica para mostrar feedback y botón al seleccionar opción
+        document.querySelectorAll('.opcion').forEach(opcion => {
+            opcion.addEventListener('click', () => {
+                // Mostrar feedback
+                document.getElementById('feedback').classList.add('mostrar');
+                
+                // Mostrar botón
+                document.getElementById('siguiente-btn').classList.add('mostrar');
+            });
+        });
+    </script>
 </body>
 </html>
