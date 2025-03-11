@@ -20,7 +20,7 @@ html {
       1fr                   /* Opciones (espacio restante) */
       minmax(5vh, 10vh)     /* Feedback */
       minmax(8vh, 10vh);    /* Botón (8-10% del alto) */
-  height: 100vh; /* Ocupa exactamente el alto de la pantalla */
+  height: 100dvh; /* Ocupa exactamente el alto de la pantalla */
   gap: 2vh; /* Espaciado relativo al alto de la pantalla */
   max-width: 800px;
   margin: 0 auto;
