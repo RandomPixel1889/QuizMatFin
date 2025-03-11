@@ -15,19 +15,26 @@ html {
   display: grid;
   grid-template-rows: 
       auto                  /* Header */
-      minmax(10vh, 15vh)    /* Logo (10-15% del alto de pantalla) */
-      minmax(15vh, 20vh)    /* Pregunta (15-20% del alto de pantalla) */
+      minmax(10dvh, 15dvh)  /* Logo (10-15% del alto de pantalla) */
+      minmax(15dvh, 20dvh)  /* Pregunta (15-20% del alto de pantalla) */
       1fr                   /* Opciones (espacio restante) */
-      minmax(5vh, 10vh)     /* Feedback */
-      minmax(8vh, 10vh);    /* Botón (8-10% del alto) */
-  height: 100dvh; /* Ocupa exactamente el alto de la pantalla */
-  gap: 2vh; /* Espaciado relativo al alto de la pantalla */
+      minmax(5dvh, 10dvh)   /* Feedback */
+      minmax(8dvh, 10dvh);  /* Botón (8-10% del alto) */
+  height: 100dvh; /* Alto dinámico */
+  gap: 2dvh; /* Espaciado relativo al alto de la pantalla */
   max-width: 800px;
-  margin: 0 auto 5px auto; /* top, right, bottom, left: forzar un pequeño desbordamiento con margin-bottom*/
+  margin: 0 auto; /* Centrado horizontal */
   padding: 0px;
   box-sizing: border-box; /* Evita desbordamientos por el padding */
   background-color: #f0f0f0;
   border: 0px solid #000000;
+}
+
+/* Aplicar margen inferior solo en dispositivos móviles */
+@media (hover: none) and (pointer: coarse) {
+  .contenedor {
+    margin-bottom: 20px; /* Forzar un pequeño desbordamiento */
+  }
 }
 
 /* Header - Flexbox para alinear elementos */
