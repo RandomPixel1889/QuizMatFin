@@ -33,7 +33,7 @@ html {
 /* Aplicar margen inferior solo en dispositivos móviles */
 @media (hover: none) and (pointer: coarse) {
   .contenedor {
-    margin-bottom: 20px; /* Forzar un pequeño desbordamiento */
+    margin-bottom: 50px; /* Forzar un pequeño desbordamiento */
   }
 }
 
