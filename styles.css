@@ -23,7 +23,7 @@ html {
   height: 100dvh; /* Ocupa exactamente el alto de la pantalla */
   gap: 2vh; /* Espaciado relativo al alto de la pantalla */
   max-width: 800px;
-  margin: 0 auto 1px auto; /* top, right, bottom, left: forzar un pequeño desbordamiento con margin-bottom*/
+  margin: 0 auto 5px auto; /* top, right, bottom, left: forzar un pequeño desbordamiento con margin-bottom*/
   padding: 0px;
   box-sizing: border-box; /* Evita desbordamientos por el padding */
   background-color: #f0f0f0;
