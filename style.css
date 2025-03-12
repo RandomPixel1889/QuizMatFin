@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
 /* Tamaño base personalizado */
 html {
   font-size: 16px; /* 1rem = 16px (puedes cambiarlo si lo necesitas) */
@@ -21,7 +25,7 @@ html {
       minmax(5dvh, 10dvh)   /* Feedback */
       minmax(8dvh, 10dvh);  /* Botón (8-10% del alto) */
   height: 100dvh; /* Alto dinámico */
-  gap: 2dvh; /* Espaciado relativo al alto de la pantalla */
+  gap: 0dvh; /* Espaciado entre filas */
   max-width: 800px;
   margin: 0 auto; /* Centrado horizontal */
   padding: 0px;
@@ -43,7 +47,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem; /* 16px */
+  padding: 0.5rem; /* 16px */
   background-color: #d1d1d1;
   border-radius: 0px;
   font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Texto adaptable */
@@ -66,7 +70,7 @@ html {
   overflow-y: auto;
   min-height: 15vh; /* Mínimo 15% del alto de pantalla */
   max-height: 20vh; /* Máximo 20% */
-  border: 1px solid #eee;
+  border: 1px solid #9c9c9c;
   text-align: center;
   font-size: clamp(1rem, 3vw, 1.5rem); /* Texto adaptable */
 }
@@ -104,16 +108,8 @@ html {
   min-height: 5vh; /* Altura mínima */
   max-height: 10vh; /* Altura máxima */
   overflow-y: auto; /* Scroll interno si el contenido es muy largo */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s;
   font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Texto adaptable */
   border: 1px solid #96942b;
-}
-
-.feedback.mostrar {
-  opacity: 1;
-  visibility: visible;
 }
 
 /* Contenedor del botón (espacio reservado) */
@@ -131,13 +127,61 @@ html {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s;
   font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Texto adaptable */
 }
 
-#siguiente-btn.mostrar {
-  visibility: visible;
-  opacity: 1;
+
+
+/* Logo container */
+.logo-container {
+  border: 0px solid #96942b;
+  position: relative; /* Contenedor relativo para posicionar los rectángulos */  
+  width: 100%; /* Ocupa el 100% del ancho disponible */
+  height: 100%; /* Ocupa el 100% del alto disponible */
+  overflow: hidden; /* Evita que los rectángulos se desborden */
+}
+
+.rectangulo-azul {
+    position: absolute; /* Posicionamiento absoluto */
+    width: 100%; /* Mismo ancho que el logo-container */
+    height: 40%; /* 70% de la altura del logo-container */
+    background-color: blue; /* Color azul */
+    z-index: 1; /* Detrás del rectángulo blanco */
+    top: 60%; /* Desplazado 30% desde la parte superior */
+    border-radius: 20px 20px 0px 0px; /* Esquinas superiores redondeadas */
+}
+
+.rectangulo-blanco {
+    position: absolute; /* Posicionamiento absoluto */
+    width: 100%; /* Mismo ancho que el logo-container */
+    height: 20%; /* 50% de la altura del logo-container */
+    background-color: white; /* Color blanco */
+    z-index: 2; /* Encima del rectángulo azul */
+    border: 0px solid #ccc; /* Borde sutil */
+    top: 80%; /* Desplazado 50% desde la parte superior */
+    border-radius: 20px 20px 0px 0px; /* Esquinas superiores redondeadas */
+}
+
+/* Estilos para la imagen del gato */
+.gato {
+  position: absolute; /* Posicionamiento absoluto */
+  z-index: 3; /* Encima del rectángulo blanco y azul */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta el centrado */
+  width: auto; /* Mantiene la proporción de la imagen */
+  height: 70%; /* Ajusta el tamaño del gato */
+  bottom: 20%; /* Eleva el gato 20px desde la parte inferior */
+}
+
+/* Estilos para el semicírculo */
+.semicirculo {
+  position: absolute; /* Posicionamiento absoluto */
+  width: 40%; /* Ancho del semicírculo */
+  height: 80%; /* Alto del semicírculo (la mitad del ancho) */
+  background-color: #ffcc00; /* Color del semicírculo (puedes cambiarlo) */
+  border-radius: 100px 100px 0 0; /* Redondea solo las esquinas superiores */
+  bottom: 5%; /* Coloca el semicírculo en la parte inferior */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta el centrado */
+  z-index: 1; /* Encima del rectángulo azul, debajo del gato */
 }

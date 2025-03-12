@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuestionario Adaptable</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="contenedor">
         <!-- Header -->
         <header class="header">
             <span>Home</span>
+            <span>Preguntas</span>
             <span>Compartir</span>
         </header>
 
-        <!-- Logo -->
-        <img src="logo.png" class="logo" alt="Logo">
+        <!-- Logo Container-->
+        <div class="logo-container">
+            <div class="rectangulo-azul"></div>
+            <div class="rectangulo-blanco"></div>
+            <div class="semicirculo"></div> <!-- Semicírculo de fondo -->
+            <img src="gato.png" alt="Gato" class="gato"> <!-- Imagen del gato -->
+            <div class="semicirculo"></div> <!-- Semicírculo de fondo -->       
+        </div>
 
         <!-- Pregunta -->
         <div class="pregunta">
@@ -28,6 +41,7 @@
             <div class="opcion">Opción 1</div>
             <div class="opcion">Opción 2</div>
             <div class="opcion">Opción 3</div>
+            <div class="opcion">Opción 4</div>
         </div>
 
         <!-- Feedback -->
@@ -41,17 +55,5 @@
         </div>
     </div>
 
-    <script>
-        // Lógica para mostrar feedback y botón al seleccionar opción
-        document.querySelectorAll('.opcion').forEach(opcion => {
-            opcion.addEventListener('click', () => {
-                // Mostrar feedback
-                document.getElementById('feedback').classList.add('mostrar');
-                
-                // Mostrar botón
-                document.getElementById('siguiente-btn').classList.add('mostrar');
-            });
-        });
-    </script>
 </body>
 </html>
