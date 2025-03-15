@@ -30,7 +30,7 @@ html {
   margin: 0 auto; /* Centrado horizontal */
   padding: 0px;
   box-sizing: border-box; /* Evita desbordamientos por el padding */
-  background-color: #f0f0f0;
+  background-color: #B5C7EB;
   border: 0px solid #000000;
 }
 
@@ -48,9 +48,17 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem; /* 16px */
-  background-color: #d1d1d1;
   border-radius: 0px;
-  font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Texto adaptable */
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(0.93rem, 2.5vw, 1.2rem);
+
+}
+
+.header-icon {
+  width: auto;
+  height: 3dvh;
 }
 
 /* Logo adaptable */
@@ -61,7 +69,7 @@ html {
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  border: 1px solid #96942b;
+  border: 0px solid #96942b;
 }
 
 /* Pregunta con scroll interno y altura relativa */
@@ -70,7 +78,8 @@ html {
   overflow-y: auto;
   min-height: 15vh; /* Mínimo 15% del alto de pantalla */
   max-height: 20vh; /* Máximo 20% */
-  border: 1px solid #9c9c9c;
+  border: 0px solid #9c9c9c;
+  background-color: #f0f0f0;
   text-align: center;
   font-size: clamp(1rem, 3vw, 1.5rem); /* Texto adaptable */
 }
@@ -82,7 +91,8 @@ html {
   gap: 1rem; /* 16px */
   padding: 1rem; /* 16px */
   overflow-y: auto; /* Scroll interno si el contenido es muy largo */
-  border: 1px solid #96942b;
+  border: 0px solid #96942b;
+  background-color: #f0f0f0;
 }
 
 /* Estilo de cada opción */
@@ -109,14 +119,16 @@ html {
   max-height: 10vh; /* Altura máxima */
   overflow-y: auto; /* Scroll interno si el contenido es muy largo */
   font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Texto adaptable */
-  border: 1px solid #96942b;
+  border: 0px solid #96942b;
+  background-color: #f0f0f0;
 }
 
 /* Contenedor del botón (espacio reservado) */
 .boton-contenedor {
   padding: 1rem; /* 16px */
   text-align: center;
-  border: 1px solid #96942b;
+  border: 0px solid #96942b;
+  background-color: #f0f0f0;
 }
 
 /* Botón Siguiente - Oculto inicialmente */
@@ -129,8 +141,6 @@ html {
   cursor: pointer;
   font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Texto adaptable */
 }
-
-
 
 /* Logo container */
 .logo-container {
@@ -155,7 +165,7 @@ html {
     position: absolute; /* Posicionamiento absoluto */
     width: 100%; /* Mismo ancho que el logo-container */
     height: 20%; /* 50% de la altura del logo-container */
-    background-color: white; /* Color blanco */
+    background-color: #f0f0f0; /* Color blanco */
     z-index: 2; /* Encima del rectángulo azul */
     border: 0px solid #ccc; /* Borde sutil */
     top: 80%; /* Desplazado 50% desde la parte superior */
@@ -173,15 +183,52 @@ html {
   bottom: 20%; /* Eleva el gato 20px desde la parte inferior */
 }
 
-/* Estilos para el semicírculo */
-.semicirculo {
+/* Estilos para el cuadrado rojo */
+.cuadrado-rojo {
   position: absolute; /* Posicionamiento absoluto */
-  width: 40%; /* Ancho del semicírculo */
-  height: 80%; /* Alto del semicírculo (la mitad del ancho) */
-  background-color: #ffcc00; /* Color del semicírculo (puedes cambiarlo) */
-  border-radius: 100px 100px 0 0; /* Redondea solo las esquinas superiores */
-  bottom: 5%; /* Coloca el semicírculo en la parte inferior */
+  height: 120%; /* Alto del cuadrado (ajusta según necesites) */
+  aspect-ratio: 1 / 1; /* Relación de aspecto 1:1 (cuadrado) */
+  background-color: transparent; /* Fondo transparente */
+  border: 0px solid red; /* Borde rojo */
   left: 50%; /* Centra horizontalmente */
   transform: translateX(-50%); /* Ajusta el centrado */
-  z-index: 1; /* Encima del rectángulo azul, debajo del gato */
+  z-index: 1; /* Detrás del gato (z-index: 3) y del rectangulo-blanco (z-index: 2), pero delante del rectangulo-azul (z-index: 1) */
 }
+
+.progress-ring {
+  margin: 0px 0;
+}
+
+.progress-ring__circle {
+transform: rotate(-180deg);  
+transform-origin: 50% 50%;
+transition: stroke-dashoffset 0.5s;
+}
+
+.rectangulo-rosa {
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  background-color: transparent;
+  border: 0px solid rgb(255, 71, 224);
+  top: 60%;
+  z-index: 5;
+  display: flex; /* Activa flexbox */
+  flex-direction: row; /* Asegura que los elementos estén en una línea */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Separa los elementos a los extremos */
+  padding: 0 5%; /* Agrega un poco de espacio a los lados */
+}
+
+/* Ajustes para los contadores */
+.contador-preguntas,
+.contador-tiempo {
+  position: relative; 
+  font-size: clamp(0.73rem, 3.8vw, 1rem);
+  color: #ffffff;
+  font-weight: 700;
+  z-index: 4;
+}
+
+
+

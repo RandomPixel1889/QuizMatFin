@@ -16,18 +16,38 @@
     <div class="contenedor">
         <!-- Header -->
         <header class="header">
-            <span>Home</span>
+            <a href="#" target="_blank">
+                <img src="arrow_back.svg" class="header-icon">
+            </a>
             <span>Preguntas</span>
-            <span>Compartir</span>
+        <a href="#" target="_blank">
+            <img src="close.svg" class="header-icon">
+        </a>
         </header>
 
         <!-- Logo Container-->
         <div class="logo-container">
             <div class="rectangulo-azul"></div>
+
+            <div class="rectangulo-rosa">
+                <div class="contador-preguntas">1/100</div>
+                <div class="contador-tiempo">00:00</div>
+            </div>
+
             <div class="rectangulo-blanco"></div>
-            <div class="semicirculo"></div> <!-- Semicírculo de fondo -->
+
+            <div class="cuadrado-rojo">
+                <svg class="progress-ring" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                    <circle class="progress-ring__background" stroke="#6d6d6d" stroke-width="8" fill="white" r="46" cx="50" cy="50"/>
+                    <circle class="progress-ring__circle" stroke="#4CAF50" stroke-width="8" fill="transparent" r="46" cx="50" cy="50" style="display: none;"/>
+                </svg>
+            </div> 
+            
+     
             <img src="gato.png" alt="Gato" class="gato"> <!-- Imagen del gato -->
-            <div class="semicirculo"></div> <!-- Semicírculo de fondo -->       
+
+
+
         </div>
 
         <!-- Pregunta -->
