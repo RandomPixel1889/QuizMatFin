@@ -11,6 +11,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
+ 
+
 </head>
 <body>
     <div class="contenedor">
@@ -30,20 +32,32 @@
             <div class="rectangulo-azul"></div>
 
             <div class="rectangulo-rosa">
+
                 <div class="contador-preguntas">
-                    <img src="help.svg" class="contador-icon">
-                    1/100</div>
+
+                  <img src="help.svg" class="contador-icon">
+                  <span id="contador-preguntas-texto">1/100</span>
+                  
+                  </div>
+
                 <div class="contador-tiempo">
-                    <img src="schedule.svg" class="contador-icon">
-                    00:00</div>
+
+                  <img src="schedule.svg" class="contador-icon">
+                  <span id="contador-tiempo-texto">00:00</span>
+                  
+                  
+                  </div>
+
             </div>
 
             <div class="rectangulo-blanco"></div>
 
             <div class="cuadrado-rojo">
                 <svg class="progress-ring" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                  
                     <circle class="progress-ring__background" stroke="#6d6d6d" stroke-width="8" fill="white" r="46" cx="50" cy="50"/>
-                    <circle class="progress-ring__circle" stroke="#4CAF50" stroke-width="8" fill="transparent" r="46" cx="50" cy="50" style="display: none;"/>
+
+                    <circle class="progress-ring__circle" stroke="#4CAF50" stroke-width="8" fill="transparent" r="46" cx="50" cy="50"/>
                 </svg>
             </div> 
             
@@ -56,8 +70,7 @@
 
         <!-- Pregunta -->
         <div class="pregunta">
-            ¿Cuál es la capital de Francia? (Texto tan largo como necesites...
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Acá va la pregunta. 
         </div>
 
         <!-- Opciones -->
@@ -65,47 +78,17 @@
 
 
             <div class="option">
-                <!-- Botón normal -->
+
                 <label for="opcion-1">
                   <input id="opcion-1" type="radio" name="radio-examples">
-                  <span class="text">Opción 1</span>
+                  <span class="text">Una de las opciones</span>
                 </label>
-            
-                <!-- Botón normal -->
-                <label for="opcion-1b">
-                  <input id="opcion-1b" type="radio" name="radio-examples">
-                  <span class="text">Opción 1b</span>
+
+                <label for="opcion-2">
+                  <input id="opcion-2" type="radio" name="radio-examples">
+                  <span class="text">Otra de las opciones</span>
                 </label>
-            
-                <!-- Botón con estilo fijo "checked" -->
-                <label for="opcion-2" class="fixed-checked-style">
-                  <input id="opcion-2" type="radio" name="radio-examples" checked disabled>
-                  <span class="text">Opción 2, se descarta</span>
-                </label>
-            
-                <!-- Opción 3 (Verdadera) -->
-                <label for="opcion-3" class="true">
-                  <input id="opcion-3" type="radio" name="radio-examples" checked disabled>
-                  <span class="text">Opción 3</span>
-                </label>
-            
-                <!-- Opción 4 (Falsa) -->
-                <label for="opcion-4" class="false">
-                  <input id="opcion-4" type="radio" name="radio-examples" checked disabled>
-                  <span class="text">Opción 4</span>
-                </label>
-            
-                <!-- Opción 5 (Deshabilitada) -->
-                <label for="opcion-5" class="disabled">
-                  <input id="opcion-5" type="radio" name="radio-examples" disabled>
-                  <span class="text">Opción 5</span>
-                </label>
-            
-                <!-- Opción 6 (Verdadera con círculo deshabilitado) -->
-                <label for="opcion-6" class="truedisabled">
-                  <input id="opcion-6" type="radio" name="radio-examples" disabled>
-                  <span class="text">Opción 6</span>
-                </label>
+
               </div>
 
 
@@ -113,14 +96,28 @@
 
         <!-- Feedback -->
         <div class="feedback" id="feedback">
-            ¡Correcto! París es la respuesta.
+          <div class="feedback-text" id="feedback-text">
+            Correcto o Verdadero. Justificación. 
+          </div>
         </div>
 
         <!-- Botón Siguiente -->
         <div class="boton-contenedor">
-            <button id="siguiente-btn">Siguiente Pregunta</button>
+            <button id="siguiente-btn">Siguiente</button>
         </div>
+
+        <!-- Puntaje Final -->
+        <div class="puntaje-final-contenedor">
+          <div class="puntaje-final">
+          <h1>Puntaje Final</h1>
+          <p>¡Felicidades! Has completado el cuestionario.</p>
+          <p>Tu puntaje es: <strong>85/100</strong></p>
+          </div>
+        </div>
+
     </div>
+
+    <script src="script.js"></script>   
 
 </body>
 </html>

@@ -1,0 +1,42 @@
+{
+    "preguntas": [
+      {
+        "id": 1,
+        "pregunta": "A igualdad de cuotas, tasas de interés y plazos",
+        "opciones": [
+          "El valor financiero de una amortización equivale al de una imposición actualizada por ‘n-d’ períodos",
+          "El valor financiero de una imposición equivale al de una renta diferida capitalizada por ‘n+d’ períodos",
+          "El valor financiero de una renta diferida coincide con el de una imposición capitalizada por ‘d’ períodos",
+          "El valor financiero de una renta diferida equivale al de una amortización capitalizada por ‘d’ períodos"
+        ],
+        "opcion_correcta": 2,
+        "justificacion": "El valor financiero de una imposición equivale al de una renta diferida capitalizada por ‘n+d’ períodos.",
+        "unidad": 1,
+        "fuente": "Examen Final 07/06/2024 tema R-2024-14"
+      },
+      {
+        "id": 2,
+        "pregunta": "En la refinanciación de deudas se aplica el principio de equidad financiera, que expresa que la suma de los valores nominales de los documentos a reemplazar debe ser igual a la suma de los valores nominales de los nuevos documentos, aplicando el mismo régimen de descuento y misma tasa.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "opcion_correcta": 1,
+        "justificacion": "Si se otorga un préstamo por sistema alemán a tasa flotante, la variación de la tasa no modifica la amortización periódica, sino simplemente el servicio de intereses de cada período.",
+        "unidad": 2,
+        "fuente": "Examen Final 07/06/2024 tema R-2024-14"
+      },
+      {
+        "id": 3,
+        "pregunta": "El bono cupón cero presenta mayor riesgo de reinversión que un bono con amortizaciones y pago periódico de intereses.",
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "opcion_correcta": 1,
+        "justificacion": "El bono cupón cero presenta mayor riesgo de reinversión que un bono con amortizaciones y pago periódico de intereses.",
+        "unidad": "3",
+        "fuente": "Examen Final 07/06/2024 tema R-2024-14"
+      }
+    ]
+  }

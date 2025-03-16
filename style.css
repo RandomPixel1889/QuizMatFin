@@ -19,11 +19,18 @@ html {
   display: grid;
   grid-template-rows: 
       auto                  /* Header */
-      minmax(10dvh, 15dvh)  /* Logo (10-15% del alto de pantalla) */
-      minmax(15dvh, 20dvh)  /* Pregunta (15-20% del alto de pantalla) */
-      1fr                   /* Opciones (espacio restante) */
+      minmax(10dvh, 15dvh)  /* Logo Container */
+      minmax(15dvh, 20dvh)  /* Pregunta */
+      1fr                   /* Opciones Container */
       minmax(5dvh, 10dvh)   /* Feedback */
-      minmax(8dvh, 10dvh);  /* Botón (8-10% del alto) */
+      minmax(8dvh, 10dvh);  /* Botón Contenedor */
+  grid-template-areas:
+    "header"
+    "logo-container"
+    "pregunta"
+    "opciones-container"
+    "feedback"
+    "boton-contenedor";
   height: 100dvh; /* Alto dinámico */
   gap: 0dvh; /* Espaciado entre filas */
   max-width: 800px;
@@ -53,6 +60,7 @@ html {
   font-weight: 700;
   color: #ffffff;
   font-size: clamp(0.93rem, 2.5vw, 1.2rem);
+  grid-area: header;
 
 }
 
@@ -61,16 +69,7 @@ html {
   height: 3dvh;
 }
 
-/* Logo adaptable */
-.logo {
-  width: min(90%, 30vw); /* Ancho máximo 30% del viewport */
-  height: auto;
-  max-height: 15vh; /* No supera el 15% del alto */
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border: 0px solid #96942b;
-}
+
 
 /* Pregunta con scroll interno y altura relativa */
 .pregunta {
@@ -82,6 +81,7 @@ html {
   background-color: #f0f0f0;
   text-align: center;
   font-size: clamp(1rem, 3vw, 1.5rem); /* Texto adaptable */
+  grid-area: pregunta;
 }
 
 
@@ -95,6 +95,7 @@ html {
   font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Texto adaptable */
   border: 0px solid #96942b;
   background-color: #f0f0f0;
+  grid-area: feedback;
 }
 
 /* Contenedor del botón (espacio reservado) */
@@ -103,6 +104,7 @@ html {
   text-align: center;
   border: 0px solid #96942b;
   background-color: #f0f0f0;
+  grid-area: boton-contenedor;
 }
 
 /* Botón Siguiente - Oculto inicialmente */
@@ -123,6 +125,7 @@ html {
   width: 100%; /* Ocupa el 100% del ancho disponible */
   height: 100%; /* Ocupa el 100% del alto disponible */
   overflow: hidden; /* Evita que los rectángulos se desborden */
+  grid-area: logo-container;
 }
 
 .rectangulo-azul {
@@ -160,13 +163,13 @@ html {
 /* Estilos para el cuadrado rojo */
 .cuadrado-rojo {
   position: absolute; /* Posicionamiento absoluto */
-  height: 120%; /* Alto del cuadrado (ajusta según necesites) */
+  height: 100%; /* Alto del cuadrado (ajusta según necesites) */
   aspect-ratio: 1 / 1; /* Relación de aspecto 1:1 (cuadrado) */
   background-color: transparent; /* Fondo transparente */
   border: 0px solid red; /* Borde rojo */
   left: 50%; /* Centra horizontalmente */
   transform: translateX(-50%); /* Ajusta el centrado */
-  z-index: 1; /* Detrás del gato (z-index: 3) y del rectangulo-blanco (z-index: 2), pero delante del rectangulo-azul (z-index: 1) */
+  z-index: 3; /* Detrás del gato (z-index: 3) y del rectangulo-blanco (z-index: 2), pero delante del rectangulo-azul (z-index: 1) */
 }
 
 .progress-ring {
@@ -215,6 +218,7 @@ transition: stroke-dashoffset 0.5s;
   border: 0px solid #96942b;
   background-color: #f0f0f0;
   z-index: 3;
+  grid-area: opciones-container;
 }
 
 .option {
@@ -300,82 +304,6 @@ transition: stroke-dashoffset 0.5s;
   transform: scale(1);
 }
 
-/* Estilo para la opción 3 (Verdadera) */
-.option .true::before {
-  background-color: #E1F9F1 !important;
-  border-color: #28a745 !important;
-}
-.option .true input[type="radio"] {
-  background-color: #28a745 !important;
-}
-.option .true .true-label {
-  background-color: #28a745;
-  color: white;
-  margin-left: auto; /* Mueve el texto a la derecha */
-}
-.option .true::after {
-content: url('true-icon.svg'); /* Ruta al SVG de "V" */
-margin-left: auto; /* Mueve el SVG a la derecha */
-display: inline-flex; /* Para alinear el SVG */
-align-items: center; /* Centra el SVG verticalmente */
-}
-
-/* Estilo para la opción 4 (Falsa) */
-.option .false::before {
-  background-color: #FFE9E9 !important;
-  border-color: #dc3545 !important;
-}
-.option .false input[type="radio"] {
-  background-color: #dc3545 !important;
-}
-.option .false .false-label {
-  background-color: #dc3545;
-  color: white;
-  margin-left: auto; /* Mueve el texto a la derecha */
-}
-
-.option .false::after {
-content: url('false-icon.svg'); /* Ruta al SVG de "F" */
-margin-left: auto; /* Mueve el SVG a la derecha */
-display: inline-flex; /* Para alinear el SVG */
-align-items: center; /* Centra el SVG verticalmente */
-}
-
-/* Estilo para la opción 5 (Deshabilitada) */
-.option .disabled::before {
-  background-color: #F5F5F5 !important; /* Fondo gris claro */
-  border: 1px solid #CCCCCC !important; /* Borde gris */
-}
-.option .disabled input[type="radio"] {
-  background-color: #CCCCCC !important; /* Radio button gris */
-  pointer-events: none; /* Desactiva interacciones */
-}
-.option .disabled .text {
-  color: #999999 !important; /* Texto gris */
-}
-
-/* Estilo para la opción 6 (Verdadera con círculo deshabilitado) */
-.option .truedisabled::before {
-  background-color: #E1F9F1 !important; /* Fondo verde claro */
-  border-color: #28a745 !important; /* Borde verde */
-}
-.option .truedisabled input[type="radio"] {
-  background-color: #CCCCCC !important; /* Radio button gris (como opción 5) */
-  pointer-events: none; /* Desactiva interacciones */
-}
-.option .truedisabled .true-label {
-  background-color: #28a745; /* Fondo verde para el texto "V" */
-  color: white;
-  margin-left: auto; /* Mueve el texto a la derecha */
-}
-
-.option .truedisabled::after {
-content: url('true-icon.svg'); /* Ruta al SVG de "V" */
-margin-left: auto; /* Mueve el SVG a la derecha */
-display: inline-flex; /* Para alinear el SVG */
-align-items: center; /* Centra el SVG verticalmente */
-}
-
 @keyframes pulse-12 {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.4);
@@ -386,4 +314,26 @@ align-items: center; /* Centra el SVG verticalmente */
   100% {
     box-shadow: 0 0 0 0 rgba(0, 0, 255, 0);
   }
+}
+
+.puntaje-final {
+  display: none; /* Oculto por defecto */
+  grid-area: pregunta / 1 / feedback / -1; /* Ocupa el espacio de pregunta, opciones-container y feedback */
+  background-color: #f0f0f0;
+  height: 350%;
+}
+
+/* Clase para mostrar el puntaje final */
+.mostrar-puntaje .pregunta,
+.mostrar-puntaje .opciones-container,
+.mostrar-puntaje .feedback {
+  display: none;
+}
+
+.mostrar-puntaje .puntaje-final {
+  display: block;
+}
+
+#feedback-text, #siguiente-btn {
+  display: none; /* Ocultar inicialmente */
 }
