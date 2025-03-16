@@ -278,6 +278,7 @@ transition: stroke-dashoffset 0.5s;
   appearance: none;
   width: 0.8rem;
   height: 0.8rem;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   display: flex;
   justify-content: center;
