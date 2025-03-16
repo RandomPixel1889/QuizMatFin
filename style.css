@@ -177,9 +177,10 @@ html {
 }
 
 .progress-ring__circle {
-transform: rotate(-180deg);  
-transform-origin: 50% 50%;
-transition: stroke-dashoffset 0.5s;
+  opacity: 0; /* Oculta el anillo inicialmente */
+  transform: rotate(-180deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.5s, opacity 3s; /* Agrega transición para opacity */
 }
 
 .rectangulo-rosa {
@@ -317,6 +318,67 @@ transition: stroke-dashoffset 0.5s;
   }
 }
 
+
+
+
+
+/* Estilos para la opción seleccionada correcta */
+.option label.correct input[type="radio"]:checked {
+  background-color: #4CAF50;
+}
+
+.option label.correct::before {
+  background-color: #71b973;
+  border-color: #4CAF50;
+}
+
+/* Estilos para la opción seleccionada incorrecta */
+.option label.incorrect input[type="radio"]:checked {
+  background-color: #F44336;
+}
+
+.option label.incorrect::before {
+  background-color: #d67d76;
+  border-color: #F44336;
+}
+
+/* Estilos para opciones deshabilitadas */
+.option label.disabled::before {
+  background-color: #D9D9E5;
+  border-color: #D9D9E5;
+}
+
+.option label.disabled .text {
+  color: #808080; /* Color gris para el texto */
+}
+
+.option label.disabled input[type="radio"] {
+  pointer-events: none; /* Deshabilitar clics */
+}
+
+/* Estilos para la opción seleccionada correcta */
+.option label.correct:has(input:checked)::before {
+  background-color: #71b973; /* Color de fondo para opción correcta */
+  border-color: #4CAF50; /* Color de borde para opción correcta */
+}
+
+/* Estilos para la opción seleccionada incorrecta */
+.option label.incorrect:has(input:checked)::before {
+  background-color: #d67d76; /* Color de fondo para opción incorrecta */
+  border-color: #F44336; /* Color de borde para opción incorrecta */
+}
+
+/* Estilos para la opción correcta cuando está deshabilitada pero debe destacarse */
+.option label.correct.disabled::before {
+  background-color: #71b973; /* Fondo verde */
+  border-color: #4CAF50; /* Borde verde */
+}
+
+
+
+
+
+
 .puntaje-final {
   display: none; /* Oculto por defecto */
   grid-area: pregunta / 1 / feedback / -1; /* Ocupa el espacio de pregunta, opciones-container y feedback */
@@ -338,3 +400,13 @@ transition: stroke-dashoffset 0.5s;
 #feedback-text, #siguiente-btn {
   display: none; /* Ocultar inicialmente */
 }
+
+
+
+
+
+
+
+
+
+

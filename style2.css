@@ -1,0 +1,120 @@
+CORRECTA
+
+.option label input[type="radio"]:checked {
+  background-color: #435dd8;
+}
+
+.option label:has(input:checked)::before {
+  background-color: #E1E9FF;
+  border-color: #435dd8;
+}
+
+FALSA
+
+.option label input[type="radio"]:checked {
+  background-color: #435dd8;
+}
+
+.option label:has(input:checked)::before {
+  background-color: #E1E9FF;
+  border-color: #435dd8;
+}
+
+DESHABILITADA
+
+.option label::before {
+  background-color: #ffffff;
+  border: 1px solid transparent;
+}
+
+CORRECTA NO SELECCIONADA 
+.option label::before {
+  background-color: #ffffff;
+  border: 1px solid transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+CORRECTA
+
+.option label input[type="radio"]:checked {
+  background-color: #4CAF50;
+}
+
+.option label:has(input:checked)::before {
+  background-color: #71b973;
+  border-color: #4CAF50;
+}
+
+FALSA
+
+.option label input[type="radio"]:checked {
+  background-color: #F44336;
+}
+
+.option label:has(input:checked)::before {
+  background-color: #d67d76;
+  border-color: #F44336;
+}
+
+DESHABILITADA
+
+.option label::before {
+  background-color: #D9D9E5;
+  border: 1px solid #D9D9E5;
+}
+
+CORRECTA NO SELECCIONADA 
+.option label::before {
+  background-color: #71b973;
+  border: 1px solid #4CAF50;
+}
+
+
+
+
+
+
+
+/* Estilo para la opción correcta */
+.option label.correct input[type="radio"]:checked::before {
+    background-color: #71b973; /* Verde */
+    border-color: #4CAF50; /* Verde */
+  }
+  
+  /* Estilo para la opción incorrecta */
+  .option label.incorrect input[type="radio"]:checked::before {
+    background-color: #d67d76; /* Rojo */
+    border-color: #F44336; /* Rojo */
+  }
+  
+  /* Estilo para las opciones deshabilitadas */
+  .option label.disabled input[type="radio"]::before {
+    background-color: #D9D9E5; /* Gris */
+    border-color: #D9D9E5; /* Gris */
+  }
+  
+  /* Estilo para el radio button seleccionado (correcto o incorrecto) */
+  .option label input[type="radio"]:checked {
+    background-color: transparent; /* Fondo transparente */
+  }
+  
+  /* Estilo para el radio button correcto */
+  .option label.correct input[type="radio"]:checked {
+    background-color: #4CAF50; /* Verde */
+  }
+  
+  /* Estilo para el radio button incorrecto */
+  .option label.incorrect input[type="radio"]:checked {
+    background-color: #F44336; /* Rojo */
+  }
