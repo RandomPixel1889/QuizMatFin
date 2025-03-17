@@ -56,7 +56,7 @@ html {
   align-items: center;
   padding: 0.5rem; /* 16px */
   border-radius: 0px;
-  font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+  font-size: clamp(14px, 2.5vw, 24px);
   font-weight: 700;
   color: #ffffff;
   grid-area: header;
@@ -91,7 +91,7 @@ html {
   min-height: 5vh; /* Altura mínima */
   max-height: 10vh; /* Altura máxima */
   overflow-y: auto; /* Scroll interno si el contenido es muy largo */
-  font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+  font-size: clamp(14px, 2.5vw, 24px);
   border: 0px solid #96942b;
   background-color: #f0f0f0;
   grid-area: feedback;
@@ -114,7 +114,7 @@ html {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+  font-size: clamp(14px, 2.5vw, 24px);
 }
 
 /* Logo container */
@@ -201,7 +201,7 @@ html {
 .contador-preguntas,
 .contador-tiempo {
   position: relative; 
-  font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+  font-size: clamp(14px, 2.5vw, 24px);
   color: #ffffff;
   font-weight: 700;
   z-index: 4;
@@ -270,7 +270,7 @@ html {
 }
 .option label .text {
   color: #333;
-  font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+  font-size: clamp(14px, 2.5vw, 24px);
 }
 
 .option label input[type="radio"] {
@@ -383,7 +383,7 @@ html {
   grid-area: pregunta / 1 / feedback / -1; /* Ocupa el espacio de pregunta, opciones-container y feedback */
   background-color: #f0f0f0;
   height: 350%;
-  font-size: clamp(0.875rem, 2.5vw, 1.5rem);
+  font-size: clamp(14px, 2.5vw, 24px);
 }
 
 /* Clase para mostrar el puntaje final */
